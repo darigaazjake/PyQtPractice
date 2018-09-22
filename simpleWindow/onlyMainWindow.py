@@ -1,11 +1,11 @@
 """
-Level 3
-ボタンを置くだけ
+Level 4
+ボタンに吹き出し
 """
 
 from PyQt5.QtWidgets import (
-    QApplication, QWidget, QPushButton)
-from PyQt5 import QtGui
+    QApplication, QWidget, QPushButton, QToolTip)
+from PyQt5.QtGui import (QIcon, QFont)
 import sys
 
 class myWidgetClass(QWidget):
@@ -14,12 +14,23 @@ class myWidgetClass(QWidget):
         self.initializeUI()
     
     def initializeUI(self):
-        self.resize(300, 200)
-        self.setWindowTitle('QtSample Level3 Button')
-        self.setWindowIcon(QtGui.QIcon('../pythonicon.png'))
+        #吹き出しの設定
+        QToolTip.setFont(QFont('SansSerif', 10))
 
-        #この1行だけでボタンがおける
+        #selfに吹き出し追加
+        self.setToolTip('This is a <b>QWidget</b> widget')
+
+        self.resize(400, 300)
+        self.setWindowTitle('QtSample Level4 ToolChips')
+        self.setWindowIcon(QIcon('../pythonicon.png'))
+
         btn = QPushButton('Button', self)
+
+        #ボタンのサイズをいい感じに設定してもらう
+        btn.resize(btn.sizeHint())
+
+        #ボタンに吹き出しを追加
+        btn.setToolTip('This is a <b>QPushButton</b> widget')
 
         self.show()
 
