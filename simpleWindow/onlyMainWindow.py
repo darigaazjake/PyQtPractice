@@ -1,9 +1,10 @@
 """
-Level 2
-クラスにする
+Level 3
+ボタンを置くだけ
 """
 
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QPushButton)
 from PyQt5 import QtGui
 import sys
 
@@ -13,9 +14,13 @@ class myWidgetClass(QWidget):
         self.initializeUI()
     
     def initializeUI(self):
-        self.resize(250, 150)
-        self.setWindowTitle('QtSample')
+        self.resize(300, 200)
+        self.setWindowTitle('QtSample Level3 Button')
         self.setWindowIcon(QtGui.QIcon('../pythonicon.png'))
+
+        #この1行だけでボタンがおける
+        btn = QPushButton('Button', self)
+
         self.show()
 
 if __name__=="__main__":
