@@ -1,1 +1,5 @@
 *.directory
+
+*/workDir/__pycache__/
+
+qtDesigner/workDir/myForm\.py
