@@ -3,3 +3,7 @@
 */workDir/__pycache__/
 
 qtDesigner/workDir/myForm\.py
+
+*\.DS_Store
+
+myBasicUi/workDir/basicForm\.py
