@@ -1,6 +1,7 @@
 """
 Qt Designerで作った.uiを利用する例
-Level1 
+Level2
+btnのSIGNALを、btnClickedActionにconnectする
 """
 
 import sys
@@ -12,6 +13,11 @@ class Test(QtWidgets.QDialog):
         super(Test, self).__init__(parent)
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+        self.clickedCount = 0
+    
+    def btnClickedAction(self):
+        self.clickedCount = self.clickedCount + 1
+        self.ui.lbl.setText("btn Clicked !! {}".format(self.clickedCount))
 
 if __name__=="__main__":
     app = QtWidgets.QApplication(sys.argv)

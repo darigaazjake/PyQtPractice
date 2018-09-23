@@ -41,5 +41,25 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>btnClickedAction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>96</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>btnClickedAction()</slot>
+ </slots>
 </ui>
